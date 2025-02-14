@@ -38,7 +38,6 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 ## Used Tech
 
 Framework:
-
 - [Next.js](https://nextjs.org/)
 - [Tailwindcss](https://tailwindcss.com/)
         
@@ -46,6 +45,7 @@ Front-End:
 - [DaisyUI](https://daisyui.com/)
 - [Formik](https://formik.org/docs/overview)
 - [Yup](https://www.npmjs.com/package/yup)
+- [React-hot-toast](https://react-hot-toast.com/)
 - [LucidReact](https://lucide.dev/guide/packages/lucide-react)
 
 Back-End:
