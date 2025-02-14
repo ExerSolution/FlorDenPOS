@@ -45,6 +45,7 @@ Framework:
 Front-End:
 - [DaisyUI](https://daisyui.com/)
 - [Formik](https://formik.org/docs/overview)
+- [Yup](https://www.npmjs.com/package/yup)
 - [LucidReact](https://lucide.dev/guide/packages/lucide-react)
 
 Back-End:
