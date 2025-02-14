@@ -1,10 +1,12 @@
+"use client";
 import Image from "next/image";
-
+import {FormField} from "@/components/UI/FormField";
+import { Form, Formik } from "formik";
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
+        <Image  
           className="dark:invert"
           src="/next.svg"
           alt="Next.js logo"
@@ -47,6 +49,36 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+           <Formik
+               initialValues={{
+                 firstname: "",
+                 lastname: "",
+                 role: "",
+                 email: "",
+                 password: "",
+                 confirmpassword: "",
+               }}
+                onSubmit={(values) => {
+                  console.log(values);
+                }}
+
+             >
+               {({ errors, touched }) => (
+                 <Form>
+                   <div className="place-content-center flex flex-col gap-y-6">
+                    <FormField
+                      tooltip="Input of the First Name. This is required."
+                      name="firstname"
+                      placeholder="First Name"
+                      label="First Name"
+                      errors={errors.firstname ? errors.firstname : ""}
+                      touched={touched.firstname ? "true" : ""}
+                    />
+                   </div>
+                
+                 </Form>
+               )}
+             </Formik>
       </main>
       <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
         <a
