@@ -51,6 +51,7 @@ Front-End:
 Back-End:
 - [Supabase](https://supabase.com/)
 - [React](https://react.dev/)
+- [TanStack Query](https://tanstack.com/query/latest/docs/framework/react/overview)
 
 API Client:
 - [Thunder Client](https://docs.thunderclient.com/) - Code Editor extension
