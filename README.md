@@ -50,5 +50,12 @@ Front-End:
 
 Back-End:
 - [Supabase](https://supabase.com/)
+- [React](https://react.dev/)
 
+API Client:
+- [Thunder Client](https://docs.thunderclient.com/) - Code Editor extension
+
+Code Editor:
+- [Visual Studio Code - Insider](https://code.visualstudio.com/insiders/)
+- [Visual Studio Code](https://code.visualstudio.com/)
     
