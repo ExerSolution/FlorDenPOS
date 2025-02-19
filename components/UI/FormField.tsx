@@ -37,7 +37,7 @@ export function FormField({
           type={type}
           placeholder={placeholder}
           name={name}
-          className={`input input-bordered w-full max-w-md ${
+          className={`input input-bordered w-full max-w-md text-black dark:text-black ${
             errors && touched ? "input-error" : ""
           }`}
           disabled={readonly}

@@ -1,6 +1,5 @@
 "use client";
 
-import { Toaster } from "react-hot-toast";
 import "../style/globals.css";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
@@ -14,13 +13,7 @@ export default function RootLayout({
   return (
     <QueryClientProvider client={queryClient}>
       <html lang="en" data-theme="dark">
-        <body className={` antialiased`}>
-        <Toaster
-  position="top-center"
-  reverseOrder={false}
-/>
-          
-          {children}</body>
+        <body className={` antialiased`}>{children}</body>
       </html>
     </QueryClientProvider>
   );

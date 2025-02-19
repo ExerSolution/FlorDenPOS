@@ -1,18 +1,16 @@
-'use client'
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import { FormField } from "../UI/FormField";
 import { useMutation } from "@tanstack/react-query";
-import toast from "react-hot-toast";
 
-export default function LoginForm() {
+export default function SignUOForm() {
     const LoginValidation = Yup.object().shape({
         email: Yup.string().email().required("Email is required"),
         password: Yup.string().required("Password is required"),    
     });
     const SignUpMutation = useMutation({
       mutationFn: async (values:any) => {
-        const response = await fetch("/api/login", {
+        const response = await fetch("/api/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -26,12 +24,9 @@ export default function LoginForm() {
       },
       onError: (error) => {
         console.error("An error occurred:", error);
-        toast.error("Login failed");
       },
       onSuccess: (data) => {
         console.log("Data:", data);
-        toast.success("Login successful");
-        
       },
     })
     return (
@@ -40,8 +35,23 @@ export default function LoginForm() {
             <div className="text-center">
         {/* <h1 className="text-5xl font-bold">Login now!</h1> */}
         </div>
-          <div className="card bg-base-100 w-full max-w-md shadow-2xl">
-         
+          <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
+          <div role="tablist" className="tabs tabs-bordered">
+  <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Tab 1" />
+  <div role="tabpanel" className="tab-content p-10">Tab content 1</div>
+
+  <input
+    type="radio"
+    name="my_tabs_1"
+    role="tab"
+    className="tab"
+    aria-label="Tab 2"
+    defaultChecked />
+  <div role="tabpanel" className="tab-content p-10">Tab content 2</div>
+
+  <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Tab 3" />
+  <div role="tabpanel" className="tab-content p-10">Tab content 3</div>
+</div>
             <Formik
                 initialValues={{
                     email: "",
@@ -53,7 +63,7 @@ export default function LoginForm() {
                 }}
             >
             {({ errors, touched }) => (
-                <Form className="card-body w-full max-w-md">
+                <Form className="card-body">
             {/* <form className="card-body"> */}
                 
                 <h1 className="text-center text-black text-2xl font-bold">Login</h1>
