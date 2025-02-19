@@ -13,12 +13,17 @@
     "@emotion/styled": "^11.14.0",
     "@fontsource/roboto": "^5.1.1",
     "@mui/material": "^6.4.1",
+    "@supabase/ssr": "^0.5.2",
+    "@tanstack/react-query": "^5.66.5",
+    "formik": "^2.4.6",
+    "lucide-react": "^0.475.0",
     "next": "15.1.5",
     "react": "^17.0.0 || ^18.0.0",
     "react-dom": "^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@tanstack/eslint-plugin-query": "^5.66.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
