@@ -1,21 +1,22 @@
-"use client";
-
+import type { Metadata } from "next";
 import "../style/globals.css";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+export const metadata: Metadata = {
+  title: "2Track-QCMS",
+  description: "Quality Control Management System",
+};
+
+// import IndexHeader from "@/components/UI/IndexHeader";
 export default function RootLayout({
-  
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const queryClient = new QueryClient();
   return (
-    <QueryClientProvider client={queryClient}>
-      <html lang="en" data-theme="dark">
-        <body className={` antialiased`}>{children}</body>
-      </html>
-    </QueryClientProvider>
+    <html lang="en" className="bg-base-200 overflow-x-hidden" data-theme="light">
+      <body>
+        {/* <IndexHeader /> */}
+        {children}</body>
+    </html>
   );
 }
-

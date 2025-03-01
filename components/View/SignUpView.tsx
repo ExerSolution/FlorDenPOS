@@ -3,14 +3,14 @@ import * as Yup from "yup";
 import { FormField } from "../UI/FormField";
 import { useMutation } from "@tanstack/react-query";
 
-export default function SignUOForm() {
+export default function SignUpForm() {
     const LoginValidation = Yup.object().shape({
         email: Yup.string().email().required("Email is required"),
         password: Yup.string().required("Password is required"),    
     });
     const SignUpMutation = useMutation({
       mutationFn: async (values:any) => {
-        const response = await fetch("/api/signup", {
+        const response = await fetch("/api/auth/signup", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

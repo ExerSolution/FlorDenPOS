@@ -4,15 +4,18 @@ import * as Yup from "yup";
 import { FormField } from "../UI/FormField";
 import { useMutation } from "@tanstack/react-query";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
 export default function LoginForm() {
+  const router = useRouter();
+
     const LoginValidation = Yup.object().shape({
         email: Yup.string().email().required("Email is required"),
         password: Yup.string().required("Password is required"),    
     });
     const SignUpMutation = useMutation({
       mutationFn: async (values:any) => {
-        const response = await fetch("/api/login", {
+        const response = await fetch("/api/auth/login", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -31,6 +34,7 @@ export default function LoginForm() {
       onSuccess: (data) => {
         console.log("Data:", data);
         toast.success("Login successful");
+        router.push("/dashboard");
         
       },
     })
